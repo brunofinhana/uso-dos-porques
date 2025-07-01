@@ -1,0 +1,266 @@
+/* Estilos para o sistema de correção dos porquês */
+
+/* Estilos gerais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+}
+
+h1 {
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+}
+
+/* Estilos para os selects */
+select[name="porques"] {
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 5px;
+}
+
+select[name="porques"]:hover {
+    border-color: #3498db;
+}
+
+select[name="porques"]:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* Estados de correção dos selects */
+select[name="porques"].correto {
+    border-color: #27ae60;
+    background-color: #d5f4e6;
+}
+
+select[name="porques"].incorreto {
+    border-color: #e74c3c;
+    background-color: #fdf2f2;
+}
+
+/* Feedback das respostas */
+.feedback {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    animation: fadeIn 0.3s ease;
+}
+
+.feedback-correto {
+    background-color: #d5f4e6;
+    color: #27ae60;
+    border: 1px solid #27ae60;
+}
+
+.feedback-incorreto {
+    background-color: #fdf2f2;
+    color: #e74c3c;
+    border: 1px solid #e74c3c;
+}
+
+.feedback .icone {
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.feedback .explicacao {
+    font-size: 11px;
+    font-weight: normal;
+    margin-top: 5px;
+    font-style: italic;
+    color: #666;
+}
+
+/* Botão de verificação */
+.btn-verificar {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 30px 0 20px 0;
+    transition: background-color 0.3s ease;
+    display: block;
+}
+
+.btn-verificar:hover {
+    background-color: #2980b9;
+}
+
+.btn-verificar:active {
+    transform: translateY(1px);
+}
+
+/* Área de resultados */
+.area-resultados {
+    margin-top: 20px;
+}
+
+.resultado-final {
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 20px 0;
+    border: 2px solid;
+    animation: slideIn 0.5s ease;
+}
+
+.resultado-excelente {
+    background-color: #d5f4e6;
+    border-color: #27ae60;
+    color: #1e8449;
+}
+
+.resultado-bom {
+    background-color: #fef9e7;
+    border-color: #f39c12;
+    color: #b7950b;
+}
+
+.resultado-melhorar {
+    background-color: #fdf2f2;
+    border-color: #e74c3c;
+    color: #c0392b;
+}
+
+.resultado-neutro {
+    background-color: #e8f4f8;
+    border-color: #3498db;
+    color: #2980b9;
+}
+
+.resultado-final h3 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.pontuacao {
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+.acertos {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.tentativas {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.porcentagem {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.mensagem {
+    font-size: 16px;
+    margin: 15px 0;
+    font-style: italic;
+}
+
+.btn-reiniciar {
+    background-color: #95a5a6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-reiniciar:hover {
+    background-color: #7f8c8d;
+}
+
+/* Estilos para os exercícios */
+ol {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+ol li {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* Estilos para as regras */
+ul {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+ul li {
+    margin-bottom: 10px;
+    padding: 8px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #3498db;
+    border-radius: 4px;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    select[name="porques"] {
+        display: block;
+        margin: 10px 0;
+        width: 200px;
+    }
+    
+    .feedback {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    .resultado-final {
+        padding: 15px;
+    }
+    
+    .pontuacao, .porcentagem {
+        font-size: 16px;
+    }
+}
